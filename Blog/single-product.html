@@ -1,0 +1,395 @@
+<!--?xml version='1.0' encoding='UTF-8' ?--><!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head id="j_idt2"> 
+  <title>
+		TALET
+	</title> 
+  <link href="/resources/common/css/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css"> 
+  <link href="/resources/user/css/bootstrap.min.css" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" href="/resources/user/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="/resources/user/css/boostrap-select.css"> 
+  <link rel="stylesheet" href="/resources/user/css/reset.css"> 
+  <link rel="stylesheet" href="/resources/user/css/style.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300,100italic,100,300italic,500italic,700,700italic,900,900italic"> 
+  <link href="/resources/user/css/slick.css" rel="stylesheet" type="text/css"> 
+  <link href="/resources/user/css/popup.css" rel="stylesheet" type="text/css"> 
+  <link href="/resources/user/css/sticky.css" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="/resources/user/js/jquery.min.js"></script> 
+  <script type="text/javascript" src="/resources/user/js/jquery-1.11.0.min.js"></script> 
+  <script type="text/javascript" src="/resources/common/js/jquery-ui.min.js"></script> 
+  <script type="text/javascript" src="/resources/user/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="/resources/user/js/bootstrap-typeahead.js"></script>
+  <script type="text/javascript" src="/javax.faces.resource/jsf.js.xhtml;jsessionid=AA242EE5B5B0CFA7D5BD9B1332CA5A9A?ln=javax.faces"></script> 
+  <script type="text/javascript" src="/resources/user/js/slick.js"></script> 
+  <script type="text/javascript" src="/resources/user/js/sticky-sidebar.js"></script> 
+  <script type="text/javascript">
+		$(function() {
+			$('.single-item').slick({
+				dots : true,
+				autoplay : false,
+				arrows : false
+			});
+			$('.responsive').slick({
+				dots : false,
+				infinite : true,
+				speed : 300,
+				slidesToShow : 3,
+				slidesToScroll : 2,
+				autoplay : true,
+				autoplaySpeed : 5000,
+				responsive : [ {
+					breakpoint : 768,
+					settings : {
+						slidesToShow : 2,
+						slidesToScroll : 2
+					}
+				}, {
+					breakpoint : 480,
+					settings : {
+						slidesToShow : 1,
+						slidesToScroll : 1
+					}
+				}
+				// You can unslick at a given breakpoint now by adding:
+				// settings: "unslick"
+				// instead of a settings object
+				]
+			});
+		});
+
+		jsf.ajax.addOnEvent(function(data) {
+			var ajaxstatus = data.status; // Can be "begin", "complete" and "success"
+			var ajaxloader = document.getElementById("ajaxloader");
+
+			switch (ajaxstatus) {
+			case "begin": // This is called right before ajax request is been sent.
+				ajaxloader.style.display = 'block';
+				break;
+
+			case "complete": // This is called right after ajax response is received.
+				ajaxloader.style.display = 'none';
+				break;
+
+			case "success": // This is called when ajax response is successfully processed.
+				// NOOP.
+				break;
+			}
+		});
+
+		/* Stack */
+		$(document).ready(function() {
+			addCss();
+			$('#toTop').click(function() {
+				$('body,html').animate({
+					scrollTop : 0
+				}, 500);
+			});
+
+			$("#gNavi .btn-gnavi, #gNavi .show-mobile a").click(function() {
+				$("#gNavi .show-mobile").slideToggle();
+			});
+
+		});
+
+		/* Addition Fitst and Last */
+		var addCss = (function() {
+			$('.section:first-child:not(:last-child)').addClass('first');
+			$('.section:last-child').addClass('last');
+			$('li:first-child:not(:last-child)').addClass('first');
+			$('li:last-child').addClass('last');
+		});
+	</script> 
+  <script type="text/javascript" src="/resources/user/js/bootstrap-select.js"></script>
+ </head>
+ <body> 
+  <div id="wrapper"> 
+   <form id="fLogout" name="fLogout" method="post" action="/Homepage;jsessionid=AA242EE5B5B0CFA7D5BD9B1332CA5A9A" enctype="application/x-www-form-urlencoded"> 
+    <input type="hidden" name="fLogout" value="fLogout"> 
+    <div id="header"> 
+     <div class="wrap clearfix"> 
+      <h1 class="logo"> <a><img src="/resources/user/img/logo.png" alt="ALENT WITHOUT END"></a> </h1> 
+      <div class="control-right"> 
+       <div class="language"> 
+        <div class="dropdown"> 
+         <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="name-language">LANGUAGE - en</span> <i class="fa fa-angle-down" aria-hidden="true"></i> </button> 
+         <ul class="dropdown-menu" aria-labelledby="dLabel"> 
+          <li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('fLogout'),{'fLogout:j_idt15':'fLogout:j_idt15'},'');return false">Vietnamese</a></li> 
+          <li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('fLogout'),{'fLogout:j_idt19':'fLogout:j_idt19'},'');return false">English</a></li> 
+          <li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('fLogout'),{'fLogout:j_idt23':'fLogout:j_idt23'},'');return false">Japanese</a></li> 
+         </ul> 
+        </div> 
+       </div> 
+       <button type="reset" class="btn-signin" data-toggle="modal" data-target=".modal-login">SIGN IN</button> 
+      </div> 
+     </div> 
+    </div>
+    <input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="ClrQpwZZZa2dYsYEq6R/SVyuzA9X9zH8XoUw+Ga6fgYtcf7rYVPXRs8q4U3gCqSBSlz+coIrdwoITxxcW9vk6wcLPTpkSZ2Saifnz22auHHEKtzk7OD2qz9idB37YfMQ8u62c8IuX7/YrUyg12Fn3RPSYnQ8TixoSe7BTpiXCrLRePYJLpFUJ8TAzgOnEo8jW4ofPaQDYG7TQG0TYHxcJE4/USki2OtNP/t4GubvjnTmy0JzpQOfAej1MMTkiUskR8z2WodNgM86Pk8DekV7PYhiEGWPf2sc6koblmfD0dNC1phcJrzlOY9UgWMUR/yxlyorY0E9nuDrY/k11M457dZZxQ1TUrXs9nTxTdl5vJBcNR5QQBCNQthzAGkhxr8yVFn+Pzbgr6A2UOCp3/XnEGu5LWwzxUQe1z+lgvNMS2Cs13iRaITHcKwPMOCy2qv3JEH0CayFPiLW6SizpwgfavaI34mcYjdl+TNhV2idJ8AB/QeQ6WNfhB9cpMtfWqCqZq4MH6GMcrEIGoo9+c+YUGw9ZzauMNd8YIxp3XkI0gTg4f/5atjlauEDLSya5R7bewouDh7fkct1TiVIR4dwrhB2RkM5/NTsYk+yLo1CfIxO7M5naS+wdk2RePhq1BrWToKtKwbSbBXXOH1rWlcJY7/m+yr3whftwpI2nDUGT5sdSyBPfXqBevtG0L4J1EjgZpOmIVhLHo22AYmVNQnP8VPF/5x8K5+SDiNVwqjL8Gtx1jsVICRSaLf2DHx3sFEpYkn2j//RNnZCexumwwt8PHgw6vlykFgX8sTK1mqBwwxw3MNXto/8RznczLlomolC4yOfqxrrR3hza4RW0TvS7awqG10DvzYkHlUHn6i/irVNSFlgBi1Cygb29TNti+iNzt/MKndxnPTtTIOoq0IX/WLhRSGeU9cxf3JKpzrVjr4T4rQHEqo9S8pDVAr6WzIkQ51yjPWtWg79M7s2ptTPi/OnxvDNULGlkHBligWR6fC1tmH5t9SRAZO/TJqlRztW0xOSNIntL394At+dN5g+HG/baq0jYOIP6/ScqOXdomyCLu7rSk4yWc6HhKLOtyJYiw0WJr+2juoLxtVucpoM/C8+Q46FXvLQLp55MkHqnloXRzq7/xSGkR/qQNQpl0mdyHYSVx2zLW1gmci+dmzVRfASjEMWAxhOu/P4wIsXJhkJR4q6zpx/TjRnqwQKxJyi6Jz+/xcRXGXPAiWfDSmfVu0Rs09h/lRF6I3op8LIcZgx0wYxcSeZohPvr7oHxr50CkOHXYoaxdG0KtYTtwOW2/rj3rAIoD3yYJnVbQ8nuwOF719hHqhhQofJYxsgpDkl3wFZryOvosZMoWgO94XcxASSpVX3K9fmwpY6nr8ewdcAnv7vHxugq7RWMzVLI8zEcpawYutrIHgp6tkCoLlOgm6MN8UskkWwwjlt+Ae5OukUzULxwpFb/bC6regkPU3glliW6DYD3Plar/ADi06aQAAw6QJo1ciZsad7AyoMdQUYNUx1INbU76AdPwo1vvhM51VbufLWItJhAQHY2mF5bFBMJDIfTLpOXFgtrF2/5C20c2upV2pcXP91yAWD24Co5EOgwEoVbftfiZzeGFXyLc46l5olUA6UlXUmgstTizEVI84lmupzcobj0vzaD4C3sVXjvH7kI2ltdigI+guuX+6052n9aiMpBD2cxfo01Yg81BCXdwbv43fyOAqaCbgnoSn2i+5ToCcJonThMolUWmoST6aUSckAyfa2YWPxjPk6dJ/AQya3SoWLzOBn3nLrvyR3xevMTfsRub13Ukw41B9QKJIJrtBKDxw1otQRcteIAwX+D5rWJY54fGHVazXYm421J7KYGEXAR2BGtD6M9wAytB+4bi3j6GhT5A/DN10=" autocomplete="off"> 
+   </form> 
+   <div class="slide-img"> 
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+     <ol class="carousel-indicators"> 
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li> 
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li> 
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li> 
+     </ol> 
+     <div class="carousel-inner" role="listbox"> 
+      <div class="item slide1 active"> 
+       <div class="img"> 
+        <img src="/resources/user/img/slide-img1.jpg" alt=""> 
+       </div> 
+       <div class="wrap"> 
+        <p class="text1"> BE DISCOVERED.<br>BE OFFERED </p> 
+        <p class="text2">Don’t come to your future employers. Let them come TO YOU</p> 
+       </div> 
+      </div> 
+      <div class="item slide2"> 
+       <div class="img"> 
+        <img src="/resources/user/img/slide-img2.jpg" alt=""> 
+       </div> 
+       <div class="wrap"> 
+        <p class="text1"> BE DISCOVERED.<br>BE OFFERED </p> 
+        <p class="text2">Don’t come to your future employers. Let them come TO YOU</p> 
+       </div> 
+      </div> 
+      <div class="item slide3"> 
+       <div class="img"> 
+        <img src="/resources/user/img/slide-img3.jpg" alt=""> 
+       </div> 
+       <div class="wrap"> 
+        <p class="text1"> BE DISCOVERED.<br>BE OFFERED </p> 
+        <p class="text2">Don’t come to your future employers. Let them come TO YOU</p> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="wrap control-priview"> 
+      <div class="control-inner"> 
+       <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <i class="fa fa-angle-left" aria-hidden="true"></i> </a> 
+       <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="contents" class="home"> 
+    <div class="sign-with-social"> 
+     <form id="fRegister1" name="fRegister1" method="post" action="/Homepage;jsessionid=AA242EE5B5B0CFA7D5BD9B1332CA5A9A" enctype="application/x-www-form-urlencoded"> 
+      <input type="hidden" name="fRegister1" value="fRegister1"> 
+      <div class="wrap"> 
+       <div class="sign-inner"> 
+        <div class="line-social clearfix"> 
+         <div class="title-with">
+          or sign up with: 
+         </div> 
+         <div class="lst-social">
+          <a href="#" onclick="mojarra.jsfcljs(document.getElementById('fRegister1'),{'fRegister1:j_idt30':'fRegister1:j_idt30','providerID':'linkedin'},'');return false" class="btn btn-linker"> <img src="/resources/user/img/icon-linkedin.png" alt=""></a>
+          <a href="#" onclick="mojarra.jsfcljs(document.getElementById('fRegister1'),{'fRegister1:j_idt33':'fRegister1:j_idt33','providerID':'facebook'},'');return false" class="btn btn-face"> <img src="/resources/user/img/icon-facebook.png" alt=""></a> 
+         </div> 
+        </div> 
+        <div class="line-input clearfix">
+         <input id="fRegister1:email" type="text" name="fRegister1:email" class="form-control form-user" placeholder="Enter your email here">
+         <input id="fRegister1:password" type="password" name="fRegister1:password" value="" class="form-control form-pass" placeholder="********">
+         <input id="fRegister1:btnJoinNow" type="submit" name="fRegister1:btnJoinNow" value="JOIN NOW" class="btn btn-signIn btn-blue" onclick="mojarra.ab(this,event,'action','fRegister1','fRegister1:msg',{'formId':'fRegister1'});return false"> 
+        </div>
+        <div id="fRegister1:msg"></div> 
+        <p class="txt-note"> By signing up, you agree with our <a href="#">Customer Service Pollicy</a> &amp; <a href="#">Privacy Policy</a> </p> 
+       </div> 
+      </div>
+      <input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1" value="h2kZgJHmo/0PVLYrTYazeE4Rm1O61xHgSbw/+jINRnbu12xXSRDMynQD4sme19dyLc41OX0+cz1hfPJJVKvvp7hYRKmz2CjUCE07TLotzJwHnTaFf13eRqqkrSwskG5gPJ6tqn0gN43VxwlDQLwG2d8ejVffE/wu7fv8NR4MXxn4lsM7NcY+JrVMmiHo89Xqdt0XyLhFGqGmZhNEbr//oJ2BfNbpn0E9469KGKhdMfDYUKVXsxQ8VcNpBnwa4WMvnV0MUkP+gk5W0ADpU9AsvKWiw4h9mz9xUny+Maz+7c/c0z/F/ElSztmxqrKvKnapqPHhGO3rxxUhMV9yLNxPDH4wYKGBeJ+5qA8wFH/gr4hbFQJtshEPEq2UBe7dRWFG5TGPbXb7rEyeWbYx2/IbbY+sW9AWeqO+0O2wSY5LttOPqr2wZcks510HKPWUvfEcagcsfQnPcenZqZxmeEWUnR8OAtLjZFDB3ihdxw4aOk3oB8bi1G9C6IXuYO7HPB2t0V/3PmbgC7JalIAC1g4/5nvN3bG+UE6J3av6RIb1vlNbRorsJFb2sNKbCO41cF2gpSje/8cyWZEd7Qg0/8Jb3IiseTDu4etXE4HVBNUvNgalDFMPpPKKQLWfFlkMuZs7DhA0poYffIzM1uy1isDTexo6pSXbBFNsYKdNm247LVr4TmTp0W+XNLMk0jmRwSqUug9NSb3lReeo07SERDLxloUoaidzaGnGFzfZ7xIBisoHMxTurIJN56tVSIfO72yFmTo5mKa8jYm2pqySC9CZqjXFNSlmP5WmkGGPJxMSQF5mIQG+nVDmQ9TCTzV+i5vSZKDqcqvD7EQCOLqKwD9S1HbjjLjAGhYPnSPQE+sLM31Bmdo1Zqs+95BkCMq575n40jm5GxWwOM2hZ6OML50cbx0C4yK8EFG4C2j9TVj66nmWQ33zG/6ntY31sctmbnzPNBmpIK18ipfjujNcgkMnnNtZu63Ckm/QIkK9EDo+0AuorjW/NOymlhJZG3ZoVZpJQqGwvOGo3DxpRdslgLyoMdkcgxYYV0TgTQxTQx0e0ZibO8k4M8CAcnPtzwR3NA1qjbNOQhM4Ux/3vxoi7XSc7MkaCJejUTPyNjPJz4RPNs5emPc1ADV/RAqQ+kFSzn+pkJm+UJuHZNj58ZDPu28dIJPZiojRRlO1bfKQ/a2nMigULTLQ5U1N9IAW7TKJIg61/RGu2m/63kaK+56UtiqtOCM4Q7LJGzE4ZayMrRnx26CQNURoUgbktLwcPTW0MkIaA77ICkEsiP/ypQgkpjENL1He/hCAGhn2xbk7zv/OPlSDI8QE290OkpVZuVAvqssedELGgNgZa0Le/ID2d5YlgwBWK/7TA+fC4/7gGBfU3wM7GSW/c+rdlomsYalxomdNURUeCwkdDHAUkWJwYVz8LjTjqDbjfeVIy4JvaTuXbbboqeIFDSavKVkxrzCXkRZME5/Zw/Mol4eAUVipYQhdVL/0PmV6pD5E5X0o/OopHsJkUFqk75b0wPsSSTxG7TqmVAjYDg7/pQ9c5wHexM0uSnLziOM9Q4N6OxLtkZpVL7u5Wu8yPXVcxcxMghMDOs6iYcX0V6b0vN5eULro1cORSY7LGnPe8syi8K0boD7xnt7jogn8ooz/vKst1dLJoBcSViPZKY5ljEkQSUetXzRGeoxSZrdMPFdekHyWgIjWbxSRzES8NnibuHrENgkoLSaZLtrG4xK39mCvUUMqm1KRIb8UTqjfyzXyPXbx/L7KuYeZbD4Lgf/2zp7Sw8zWXIS2pA85PozoIljBGAOf0xKLXREPnAbPXNZiIZk0RxRzNu0kDlg1SsEev+pYaQVFKOr0" autocomplete="off"> 
+     </form> 
+    </div> 
+    <div class="contents_01 clearfix"> 
+     <div class="col-md-6 slide-img2"> 
+      <div id="carousel-with-captions" class="carousel slide" data-ride="carouse2"> 
+       <ol class="carousel-indicators"> 
+        <li data-target="#carousel-with-captions" data-slide-to="0" class="active"></li> 
+        <li data-target="#carousel-with-captions" data-slide-to="1"></li> 
+        <li data-target="#carousel-with-captions" data-slide-to="2"></li> 
+       </ol> 
+       <div class="carousel-inner carousel2" role="listbox"> 
+        <div class="item active"> 
+         <div class="img"> 
+          <img src="/resources/user/img/slide-cont-img1.jpg" alt=""> 
+         </div> 
+        </div> 
+        <div class="item slide2"> 
+         <div class="img"> 
+          <img src="/resources/user/img/slide-cont-img1.jpg" alt=""> 
+         </div> 
+        </div> 
+        <div class="item slide3"> 
+         <div class="img"> 
+          <img src="/resources/user/img/slide-cont-img1.jpg" alt=""> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="overlay"> 
+        <img src="/resources/user/img/contents01_bg_opcity.png" alt=""> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-md-6 right-info"> 
+      <div class="inner"> 
+       <div class="title"> 
+        <div class="number">
+         78
+        </div> 
+        <div class="sub-title"> 
+         <p class="sub-titl1">Japanese firms</p> 
+         <p class="sub-titl2">Are you looking for talent like you</p> 
+        </div> 
+       </div> 
+       <p class="txt1">Most jobseekers send mass Cvs to future employers and wait. For an email. A phonecall. Something. Anything.</p> 
+       <p class="txt2">Why be one of theme?</p> 
+       <p class="txt3">What makes the Talet experience truly great is the firms in our network. They are prestigious Japanese firms actively looking for Vietnamese Professional in growing numbers. They search for fitting CVs and make contact. It’s talents like you they want.</p> 
+       <button class="btn btn-blue">BE SCOUTED WITH TALET</button> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="contents_02 clearfix"> 
+     <div class="col-md-6 photo"></div> 
+     <div class="col-md-6 box-txt clearfix"> 
+      <div class="inner"> 
+       <p class="title1">Meet</p> 
+       <p class="title2">your perfect future employer</p> 
+       <p class="title3">Japanese IT firms in our network are actively looking for talents with growing numbers. Our powerful search system ensures the right applicants meet their perfect future employers.</p> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="contents_03 clearfix"> 
+     <div class="col-md-6 photo"> 
+      <img src="/resources/user/img/home-cont3-photo.jpg" alt=""> 
+     </div> 
+     <div class="col-md-6 info-photo"> 
+      <div class="inner"> 
+       <div class="title">
+         Create
+        <br>
+        <span class="sub-tit">your Perfect Japanese Resume</span> 
+       </div> 
+       <p> A resume needs to be well-designed, professional and reflective of who you are, and where your experience lies.<br><br> A resume created with Talet is everything you need, while adhering to the strict Japanese format. Use it on site, download or print for any other purpose, Talet CV system ensures no other candidate will stand out quite the way you do. </p> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="contents_04 clearfix"> 
+     <div class="col-md-6 info-photo"> 
+      <div class="inner"> 
+       <div class="title">
+         Translate
+        <br> 
+        <span class="sub-tit">your perfect CV to flawless Japanese</span> 
+       </div> 
+       <p> It takes years to master Japanese, but having a perfect Japanese resume doesn't have to be difficult. <br><br> All Talet applicants are eligible for free, human-translation service, whether from Vietnamese or English into flawless Japanese. </p> 
+       <em>*Offer valid until 1st Semtember, 2016</em> 
+      </div> 
+     </div> 
+     <div class="col-md-6 photo"> 
+      <img src="/resources/user/img/home-cont4-photo.jpg" alt=""> 
+     </div> 
+    </div> 
+    <div class="contents_05"> 
+     <div class="wrap"> 
+      <div class="title">
+        CREATE YOUR PERFECT CV 
+       <br> 
+       <span class="sub-tit">And let us take care of the rest</span> 
+      </div> 
+     </div> 
+     <div class="sign-with-social"> 
+      <form id="fRegister2" name="fRegister2" method="post" action="/Homepage;jsessionid=AA242EE5B5B0CFA7D5BD9B1332CA5A9A" enctype="application/x-www-form-urlencoded"> 
+       <input type="hidden" name="fRegister2" value="fRegister2"> 
+       <div class="wrap"> 
+        <div class="sign-inner"> 
+         <div class="line-social clearfix"> 
+          <div class="title-with">
+           or sign up with:
+          </div> 
+          <div class="lst-social">
+           <a href="#" class="btn btn-linker"> <img src="/resources/user/img/icon-linkedin.png" alt=""></a>
+           <a href="#" class="btn btn-face"> <img src="/resources/user/img/icon-facebook.png" alt=""></a> 
+          </div> 
+         </div> 
+         <div class="line-input clearfix">
+          <input id="fRegister2:email2" type="text" name="fRegister2:email2" class="form-control form-user" placeholder="Enter your email here">
+          <input id="fRegister2:password2" type="password" name="fRegister2:password2" value="" class="form-control form-pass" placeholder="********">
+          <input id="fRegister2:btnJoinNow2" type="submit" name="fRegister2:btnJoinNow2" value="JOIN NOW" class="btn btn-signIn btn-blue" onclick="mojarra.ab(this,event,'action','fRegister2','fRegister2:msg2',{'formId':'fRegister2'});return false"> 
+         </div>
+         <div id="fRegister2:msg2"></div> 
+         <p class="txt-note"> By signing up, you agree with our <a href="#">Customer Service Pollicy</a> &amp; <a href="#">Privacy Policy</a> </p> 
+        </div> 
+       </div>
+       <input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="zdSDj/wsMi7SdFS+8xBFurDs4Ln7Lsk8fLexWlRCScMg7ZKtZ0Ax2idHLhNaP9WD6tiUkwPARx1o+39fI5wUqXVA3rJghV/l4N8HUA+AQNFN0EiUxsHZkRQXJ+WicmVchGLGEM+fpLlfUcIVjQxk2rrcJ/tOezLeuWlx18b4fnKCrgqqA9jvZZQkKa0jtcoqclp9DqpfLjCF1uydIRO4EEoXd4PeHnkKMxPQHXQ79gnHsszTaZHio2r11UUp5DYwDccTzK5CvnNjQRp4pyzHq/xRQlzQEitSdkX4C8pyIK8NoBNj4KxMvsgENglYFnF4Bu/LtclbqQLQQ62m0nEQXBIyvcjA0ijYxUDgQC8ODAbDdbitAqOm93iWqEINCsl2qMoGWU3ckku8lX+epfUC4wPMNc12OGstZErJI8ludsvr34ERushCDE+RYc0Fu1Sf6bL/Di3aTT57UdrgdYgOgOHjytNvqjCiAVF1zi9+S9Ngn+E3I3spVBSlrMC8fkkTwGAG16pVl+pWiF7OZqnibBZ7C1ZfA2vUVROEtN8ow9yiSIiwXkVYRxR8YOGwaP7uIN+mRHaSYQz5y2iFmAH6uuj2NGJ3oQoj4p2B9nh6eR6g4LdGh7kiHhVQSEz1Q5UP21pxVaOJn2+/qHhsGc7Z0YUltuZV6XlVSnJOiGbBzZsMEjJ1rea6g1/bAn+DFeqVD6zvE+PUbzyGIAoq4a4f6PAGqKYH7zOEyfeooeroMMmkWdiWfU5h/Erc+1K5af+NDr4mw5M9bHbyoof5QmXvD+/l8x0YkpOD4UUcoXim6ZyCPxeZXx8lmdtaQor9a3Q2Bt7vfqJx8FA0UPMtBpiRzI7GZ0qdSS9QSe8djIoSbuS7+PAfAI8AdsR6TkCg4pPu01c8IFDA5L1kLmXz4/ENdA3qQqRxOBD6I6YOGilHw8XgnSGZFO/nO5c/b1oxK2RqxFXfntGOEhqYWpa70SSCdYbvVgArlPhGIw4D+WJUieSkR5bPonBwhMjCQ4orLGh2VVZ4s5Uea0RgN5LdLuGni/ljDr8DDcPu74z5VhCljQf5et+l0Icp2i0oQg7MzGdXT/XhIHGP8thMUjEV+Qqco5/KZPv0OpbTxONOJEGWmMM6rYTqzUcGcDrK775bj167ypEDEvCUjMUFcv+QirPA1M8oPMmH2L0y38Eojf7rDHRVez6pAqSkyKtVG89DDx3EYbZoQNAJjpMfLDPiLf9vzwZlCrG3Qn4zoj+UzUT9b13RV9sQgtN9me5USjXMVG6slkv4x4iKIHecbTfLgkoONdhm5isT2PpcxAUMOnjvaZHoFtfSd+6eJ1OyULevmc5cguHkZ/gy0OVjmyAFi/ygfSPTfNld2uaDn7jGUpdflk+cd4tzAo+VTTb600M0oHCvyuxhCvd0qZZwD29VjX6vv4+XONt6ed2qu+rXWzHf3+xX29Pc18o06kzko48xoZT0D+1izcpOzBbWlWJDfPPLUUjR0G7EpAxxckM023g/GB/280Ou6PfPQbUE3DTs0NKsI+EcXs5Pu6Lx9y/9J7zME521O9MTSi3quYBRGHx3qu7YXz3zq7RwIxxljewadj4WVBCQf62SVT9lPP/3U4t9B7HhWPtrAJoVPSfqtexQ9T2WsWUMS3h+pJkrbNuqRmAi09Xh1at5RcauRWVN3U2qRdk71HHGHNj2aDzEhBpQeJDa5C6aUjp0i/OSW9hlOliav3SCzrLlUu1qTp95kaLDsO5pZaegYFw4Udhk6+QhZ+JyP/i7UNXctS8vXi9LWwl/+CjYvvi8U135eH4PkRNvuum2luln85diO+/NhH79lmENbKYnMmaGNI4u3SHBXpdZ" autocomplete="off"> 
+      </form> 
+     </div> 
+     <div class="circle" id="toTop"> 
+      <i class="fa fa-angle-up" aria-hidden="true"></i> 
+     </div> 
+    </div> 
+   </div> 
+   <form id="fLogin" name="fLogin" method="post" action="/Homepage;jsessionid=AA242EE5B5B0CFA7D5BD9B1332CA5A9A" enctype="application/x-www-form-urlencoded"> 
+    <input type="hidden" name="fLogin" value="fLogin"> 
+    <div class="modal fade modal-login" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> 
+     <div class="modal-dialog" role="document"> 
+      <div class="modal-content"> 
+       <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+        <div class="logo">
+         <img src="/resources/user/img/logo-modal.jpg" alt="">
+        </div> 
+       </div> 
+       <div class="modal-body"> 
+        <div class="nocation"> 
+         <i class="fa fa-bell" aria-hidden="true"></i> Create your perfect Japanese-format CV today! 
+        </div> 
+        <ul class="lst-social clearfix"> 
+         <li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('fLogin'),{'fLogin:j_idt52':'fLogin:j_idt52','providerID':'linkedin'},'');return false" class="btn btn-linker"> <img style="margin-top: 7px;" src="/resources/user/img/icon-linkedin.png" alt=""></a> </li> 
+         <li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('fLogin'),{'fLogin:j_idt56':'fLogin:j_idt56','providerID':'facebook'},'');return false" class="btn btn-face"> <img style="margin-top: 7px;" src="/resources/user/img/icon-facebook.png" alt=""></a> </li> 
+        </ul> 
+        <div class="line">
+         <span> or</span>
+        </div> 
+        <div class="pb10">
+         <input id="fLogin:email" type="text" name="fLogin:email" class="form-control form-user" placeholder="Enter your email here"> 
+        </div> 
+        <div class="pb10">
+         <input id="fLogin:password" type="password" name="fLogin:password" value="" class="form-control form-pass" placeholder="********"> 
+        </div> 
+        <div>
+         <input id="fLogin:btnLogin" type="submit" name="fLogin:btnLogin" value="Log In" class="btn btn-blue btn-login" onclick="mojarra.ab(this,event,'action','fLogin','fLogin:msg',{'formId':'fLogin'});return false"> 
+        </div>
+        <div id="fLogin:msg"></div> 
+       </div> 
+       <div class="modal-footer"> 
+        <div class="col-md-6 check-logged"> 
+         <label><input type="checkbox" name="fLogin:j_idt65"> Keep me login </label> 
+        </div> 
+        <div class="col-md-6 for-pass"> 
+         <a href="/forgotpw"> Forgot Password? </a> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div>
+    <input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:3" value="6Vbxq07VXET/EcIVhjmvEuxu4d83gm15gQn8W2IBqON2jM+z5fnIguITw3bXGU332Pt1ooNAHUsN5f18cqWM5kIuR8LIYzC7vMujaAXv1jW8nAOVMVY2Pd2+uyxHuLmrZY8gGJfW1MEWfofT66EDUnZUD0mt/U3zRLFz1K+A97yyLUeo6eYwKElnIy9Vnw8TCMNxSU8aCg082agw7hOC+eK6H6QJvaneK/27gAx9tn4rJKfXsMepx7QLvt66+ffd8CjP8TjYUt1+Lyp0B5QbQZT4Ovgtor3PdHB0T/GgPFYRVGVNhWTiayDlG4W9iaAR9oGKeRxiKwgDgScJE8xZF92QVHFeHWmxc/ZOmaxG9AWbJOc6z8/0S9jpUgjNvm22O4L2cYCTG/O6Igw9R5yUTYs/HUQHBOdjAVQQd30KVXvbVzXYAL8Majf7dPZEFtvfTWm9g+dKYTnvo7ONjK6RkzAAdenkvn33s+w9NU/osryne0D8pdqAQXBcnWEVCZGkpEou/vAPZenLNfjpFCnqA6eMWQD9W+eTgMmpVJCVbGGCjZi9tkA64gdf/hHyo8PcWktQzxs2SiNJNMUSUzjrvEJQznMfG+8EBJI3vUukMnS+UTEraMMMrRLIAoe6echbwVdTLHX6Oi3QeG3HIKvdnCGHR3Otay4antpIG1KIbm25JqF+GXP/jOB6Jv1JljjbNBpouREe6xncHUsbdASI89irFPiXRK1klOb0NN1LVL4V2mnG/nNXNGqaHd2Ub/kcO3IUABZd/7V3vtdzVdWJPkUd/Vj1B0btXv8EfNHyZjkKltNNN0Q6XbzlwaK2+NdysdqJHPBYTNdZ9agJUEs2UZ8SsSleja/PIWQlgOwBdkKPJTEpqgf4gt+yYYaUfb3VE2+uc5Ppgff7WOQQxuPVwnHDAXZ1cWUeDCxOlht9PnVxitPgRXlUZTJfDC9c3Rixj8hARzo1BhYTmZ2WZNlGvKyRwRCjiNfa14n+rueFMtFBbwvjY3N8rnocSjh/5Blnse85eakJ3wy1UH7a6mX+3TGk1Bd8uz3cjvmswQSvBDjC5/cFkMrYnxCoupzdEkqls53i1M1GxKFO00APstnIGH/akJNMaLouqcB2LbJJtY6yDavuicSi+qxyKFghukqSwxMzclibC9sqMILlgBoEZHy2Z5DFt7av8k3S/G292WxYsimMsM8mU2v+D1bqDw1nbO6mUQjHhCDRpdyGVAeWTV1Ae3+0Jps4zscUDggXakeK3zELSPtytub2tIwVHow0v50fCObVGJFNOnJnXGko4Fa/Eag5vDXqSJK83zsTxT0c7GMQD/pCX2iJwUhq4S+HJgHQi4nieAj4MdTsTSZkUsM84ba6lobteRdj60Ru2aJ0MUjZ410SrKeEQD3sd58mTT5G3V8zCqriHPf05QpHuBtwZxaJmR/yBZrD58OJrBz+/IO9HgINmBrGIqpoIii0j39nYSC9ihbdZ6bwp5JEd5jfUofN6o7dDTrRDDsfafEfFwxrFKXMAlkuoLneV9UBez/PGurpkWm1lbvtX5pBDQ2E7G4xFc0htfMiAP3JfNY9+6aZ27CmiiMBP73Tjq7L7sjeyUjyA4dEOtz6cRaX/HZrDI+irGGnNdj12ePnD+/OqTpsmXxDKihBYFiyckY1ePjSwr1CqkV9/C3kX9KjQ06819ZmlhXF+CdpBabcgYh2t7ZnriNs4DVlzgaKa3rF+GeMpEf9Gt0mYUnICzyNPqgZiPdiMiDTuy8CFBSd0m00zxVO+cTBTK05roR9XKeOTRPO+V6W4mYUG0YNXbhC1hL9AdkrCMy0FEoNTzx1knnwV/xBZV7OeW3WHnOU60b0" autocomplete="off"> 
+   </form> 
+   <div id="footer"> 
+    <div class="wrap clearfix"> 
+     <div class="col-md-6 sign-in-social"> 
+      <span class="title">Find us on</span> 
+      <ul class="lst-social"> 
+       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
+       <li><a href="http://twitter.com/morgarizzle"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+       <li><a href="http://www.linkedin.com/in/morgarizzle"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li> 
+      </ul> 
+     </div> 
+     <div class="col-md-6"> 
+      <ul class="fNavi"> 
+       <li><a href="http://www.morningjapan.com">Morning Japan Blog</a></li> 
+       <li><a href="mailto:contact@talet.com">Contact Us</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <img src="/resources/admin/img/ajax-loader.gif" id="ajaxloader" style="position: absolute; margin: auto; left: 0; right: 0; top: 0; bottom: 0; display: none;"> 
+ </body>
+</html>

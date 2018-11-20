@@ -790,8 +790,33 @@
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace('editor1');
+    var myCustomTemplates = {
+  html : function(locale) {
+    return "<li>" +
+           "<div class='btn-group'>" +
+           "<a class='btn' data-wysihtml5-action='change_view' title='" + locale.html.edit + "'>HTML</a>" +
+           "</div>" +
+           "</li>";
+  }
+}
     //bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
+    $(".textarea").wysihtml5({
+        toolbar: {
+            "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+                "emphasis": true, //Italics, bold, etc. Default true
+                "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+                "html": false, //Button which allows you to edit the generated HTML. Default false
+                "link": true, //Button to insert a link. Default true
+                "image": true, //Button to insert an image. Default true,
+                "color": true, //Button to change color of font
+                "blockquote": false, //Blockquote
+                "save": true,
+                "clearFormat": true,
+                "size": "sm" //default: none, other options are xs, sm, lg
+        },
+        "locale": "cs-CZ",
+        "customTemplates": myCustomTemplates
+    });
   });
 </script>
 </body>
